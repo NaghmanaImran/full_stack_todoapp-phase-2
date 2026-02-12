@@ -152,44 +152,44 @@ export default function AuthPage() {
         )}
 
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4 py-2 px-6">
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-blue-800">Email</Label>
+          <CardContent className="space-y-3 py-2 px-4">
+            <div className="space-y-1">
+              <Label htmlFor="email" className="text-sm text-blue-800">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="h-12 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
+                className="h-10 px-3 py-1 text-sm border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
               />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password" className="text-blue-800">Password</Label>
+            <div className="space-y-1">
+              <Label htmlFor="password" className="text-sm text-blue-800">Password</Label>
               <Input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="h-12 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
+                className="h-10 px-3 py-1 text-sm border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
               />
             </div>
           </CardContent>
-          <CardFooter className="flex flex-col gap-3 pt-2 px-6 pb-6">
+          <CardFooter className="flex flex-col gap-2 pt-2 px-4 pb-4">
             <Button
               type="submit"
-              className="w-full py-6 text-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-lg shadow-md"
+              className="w-full py-3 text-base bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-lg shadow-md"
             >
               {isLogin ? 'Sign In' : 'Sign Up'}
             </Button>
             <Button
               type="button"
               variant="outline"
-              className="w-full py-4 border-blue-400 hover:bg-blue-100 text-blue-700 rounded-lg"
+              className="w-full py-2 text-sm border-blue-400 hover:bg-blue-100 text-blue-700 rounded-lg"
               onClick={() => setIsLogin(!isLogin)}
             >
-              {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}
+              {isLogin ? 'Need account?' : 'Have account?'}
             </Button>
           </CardFooter>
         </form>

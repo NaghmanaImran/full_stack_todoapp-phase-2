@@ -32,10 +32,10 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center p-4">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4"></div>
-          <p className="text-lg text-gray-700">Loading application...</p>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-3"></div>
+          <p className="text-base text-blue-800">Loading application...</p>
         </div>
       </div>
     );
@@ -58,11 +58,11 @@ export default function HomePage() {
               </div>
             )}
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
               <Link href="/tasks" className="w-full">
                 <Button
                   variant="default"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-6 text-lg"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-4 text-base"
                   disabled={isLoading}
                 >
                   View Tasks
@@ -73,7 +73,7 @@ export default function HomePage() {
                 <Link href="/auth" className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full py-6 text-lg text-blue-700 border-blue-400 hover:bg-blue-100"
+                    className="w-full py-4 text-base text-blue-700 border-blue-400 hover:bg-blue-100"
                     disabled={isLoading}
                   >
                     My Account
@@ -83,7 +83,7 @@ export default function HomePage() {
                 <Link href="/auth" className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full py-6 text-lg text-blue-700 border-blue-400 hover:bg-blue-100"
+                    className="w-full py-4 text-base text-blue-700 border-blue-400 hover:bg-blue-100"
                     disabled={isLoading}
                   >
                     Sign In

@@ -112,28 +112,28 @@ export default function TasksPage() {
             </div>
 
             <div className="flex flex-wrap gap-3 w-full lg:w-auto">
-              <div className="flex items-center gap-2 bg-blue-100 rounded-lg p-1">
-                <Filter className="h-4 w-4 text-blue-600 ml-2" />
+              <div className="flex items-center gap-1 bg-blue-100 rounded-lg p-1">
+                <Filter className="h-3 w-3 text-blue-600 ml-1" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value as 'all' | 'pending' | 'completed')}
-                  className="border-0 bg-transparent rounded-md py-1.5 px-2 focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
+                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
                 >
-                  <option value="all">All Tasks</option>
+                  <option value="all">All</option>
                   <option value="pending">Pending</option>
-                  <option value="completed">Completed</option>
+                  <option value="completed">Done</option>
                 </select>
               </div>
 
-              <div className="flex items-center gap-2 bg-blue-100 rounded-lg p-1">
-                <SortAsc className="h-4 w-4 text-blue-600 ml-2" />
+              <div className="flex items-center gap-1 bg-blue-100 rounded-lg p-1">
+                <SortAsc className="h-3 w-3 text-blue-600 ml-1" />
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as 'created' | 'title')}
-                  className="border-0 bg-transparent rounded-md py-1.5 px-2 focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
+                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
                 >
-                  <option value="created">Sort by Date</option>
-                  <option value="title">Sort by Title</option>
+                  <option value="created">By Date</option>
+                  <option value="title">By Title</option>
                 </select>
               </div>
 
@@ -142,25 +142,25 @@ export default function TasksPage() {
                   setEditingTask(null);
                   setShowForm(true);
                 }}
-                className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white flex items-center gap-2 px-4 py-5"
+                className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white flex items-center gap-1 px-3 py-3 text-sm"
               >
-                <Plus className="h-4 w-4" /> Add Task
+                <Plus className="h-3 w-3" /> Add
               </Button>
 
               <Button
                 onClick={fetchTasks}
                 variant="outline"
-                className="flex items-center gap-2 border-blue-400 hover:bg-blue-100 text-blue-700 px-4 py-5"
+                className="flex items-center gap-1 border-blue-400 hover:bg-blue-100 text-blue-700 px-3 py-3 text-sm"
               >
-                <RotateCcw className="h-4 w-4" /> Refresh
+                <RotateCcw className="h-3 w-3" /> Refresh
               </Button>
 
               <Button
                 onClick={() => window.location.href = '/auth'}
                 variant="outline"
-                className="flex items-center gap-2 border-blue-400 hover:bg-blue-100 text-blue-700 px-4 py-5"
+                className="flex items-center gap-1 border-blue-400 hover:bg-blue-100 text-blue-700 px-3 py-3 text-sm"
               >
-                <User className="h-4 w-4" /> Account
+                <User className="h-3 w-3" /> Account
               </Button>
             </div>
           </div>
@@ -176,12 +176,12 @@ export default function TasksPage() {
             }}
           />
         ) : (
-          <div className="mb-8">
+          <div className="mb-6">
             <Button
               onClick={() => setShowForm(true)}
-              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white w-full md:w-auto flex items-center justify-center gap-2 py-6 text-lg"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white w-full md:w-auto flex items-center justify-center gap-1 py-3 text-base"
             >
-              <Plus className="h-5 w-5" /> Create New Task
+              <Plus className="h-4 w-4" /> New Task
             </Button>
           </div>
         )}

@@ -15,11 +15,11 @@ const Button = React.forwardRef(({ className, variant, size, asChild = false, ..
           "bg-secondary text-secondary-foreground hover:bg-secondary/80": variant === "secondary",
           "text-primary underline-offset-4 hover:underline": variant === "link",
         },
-        "h-10 px-4 py-2",
+        "h-9 px-3 py-1.5",
         {
-          "h-8 rounded-md px-3": size === "sm",
-          "h-12 rounded-md px-8": size === "lg",
-          "h-9 rounded-md px-3": size === "icon",
+          "h-7 rounded-sm px-2": size === "sm",
+          "h-11 rounded-md px-6": size === "lg",
+          "h-9 rounded-md px-2.5": size === "icon",
         },
         className
       )}
