@@ -33,9 +33,9 @@ export default function ProtectedLayout({ children }: { children: ReactNode }) {
   // Show loading state while checking session
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        <span className="ml-3">Checking authentication...</span>
+        <span className="ml-3 text-blue-900">Checking authentication...</span>
       </div>
     );
   }
@@ -44,9 +44,9 @@ export default function ProtectedLayout({ children }: { children: ReactNode }) {
   if (!session?.user) {
     // Return a minimal component while redirect happens
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        <span className="ml-3">Redirecting to login...</span>
+        <span className="ml-3 text-blue-900">Redirecting to login...</span>
       </div>
     );
   }

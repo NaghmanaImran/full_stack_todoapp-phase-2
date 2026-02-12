@@ -95,13 +95,13 @@ export default function AuthPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-900 to-indigo-950">
+      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-blue-100 to-blue-300">
         <div className="flex flex-col items-center">
           <div className="relative">
-            <div className="w-12 h-12 border-4 border-blue-500/30 rounded-full"></div>
+            <div className="w-12 h-12 border-4 border-blue-300/30 rounded-full"></div>
             <div className="absolute top-0 left-0 w-12 h-12 border-4 border-t-blue-500 border-transparent rounded-full animate-spin"></div>
           </div>
-          <p className="text-white mt-4">Loading...</p>
+          <p className="text-blue-900 mt-4">Loading...</p>
         </div>
       </div>
     );
@@ -109,16 +109,16 @@ export default function AuthPage() {
 
   if (session) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-indigo-950 p-4">
-        <Card className="w-full max-w-md bg-white/90 backdrop-blur-sm text-gray-800 shadow-2xl rounded-2xl border border-white/50">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 p-4">
+        <Card className="w-full max-w-md bg-white/90 backdrop-blur-sm text-blue-900 shadow-2xl rounded-2xl border border-blue-200">
           <CardHeader>
-            <CardTitle className="text-gray-800">Welcome, {session.user?.email}!</CardTitle>
-            <CardDescription className="text-gray-600">
+            <CardTitle className="text-blue-900">Welcome, {session.user?.email}!</CardTitle>
+            <CardDescription className="text-blue-700">
               You are currently signed in.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600">Your user ID: {session.user?.id}</p>
+            <p className="text-blue-700">Your user ID: {session.user?.id}</p>
           </CardContent>
           <CardFooter>
             <Button
@@ -134,13 +134,13 @@ export default function AuthPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-indigo-950 p-4">
-      <Card className="w-full max-w-sm bg-white/90 backdrop-blur-sm text-gray-800 shadow-2xl rounded-2xl border border-white/50">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 p-4">
+      <Card className="w-full max-w-sm bg-white/90 backdrop-blur-sm text-blue-900 shadow-2xl rounded-2xl border border-blue-200">
         <CardHeader className="text-center pb-4">
-          <CardTitle className="text-2xl font-bold text-gray-800">
+          <CardTitle className="text-2xl font-bold text-blue-900">
             {isLogin ? 'Sign In' : 'Sign Up'}
           </CardTitle>
-          <CardDescription className="text-gray-600">
+          <CardDescription className="text-blue-700">
             {isLogin ? 'Sign in to your account' : 'Create a new account'}
           </CardDescription>
         </CardHeader>
@@ -154,39 +154,39 @@ export default function AuthPage() {
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4 py-2 px-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-700">Email</Label>
+              <Label htmlFor="email" className="text-blue-800">Email</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="h-12 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-gray-800"
+                className="h-12 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-gray-700">Password</Label>
+              <Label htmlFor="password" className="text-blue-800">Password</Label>
               <Input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="h-12 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-gray-800"
+                className="h-12 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 text-blue-900"
               />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-3 pt-2 px-6 pb-6">
             <Button
               type="submit"
-              className="w-full py-6 text-lg bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded-lg shadow-md"
+              className="w-full py-6 text-lg bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-lg shadow-md"
             >
               {isLogin ? 'Sign In' : 'Sign Up'}
             </Button>
             <Button
               type="button"
               variant="outline"
-              className="w-full py-4 border-gray-300 hover:bg-gray-100 text-gray-800 rounded-lg"
+              className="w-full py-4 border-blue-400 hover:bg-blue-100 text-blue-700 rounded-lg"
               onClick={() => setIsLogin(!isLogin)}
             >
               {isLogin ? 'Need an account? Sign Up' : 'Already have an account? Sign In'}

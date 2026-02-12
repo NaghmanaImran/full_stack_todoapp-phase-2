@@ -42,12 +42,12 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-indigo-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center p-4">
       <div className="max-w-4xl w-full">
-        <Card className="shadow-xl">
+        <Card className="shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl font-bold text-white">Task Management App</CardTitle>
-            <CardDescription className="text-lg text-blue-200 mt-2">
+            <CardTitle className="text-3xl font-bold text-blue-900">Task Management App</CardTitle>
+            <CardDescription className="text-lg text-blue-700 mt-2">
               Organize your tasks efficiently
             </CardDescription>
           </CardHeader>
@@ -62,7 +62,7 @@ export default function HomePage() {
               <Link href="/tasks" className="w-full">
                 <Button
                   variant="default"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-6 text-lg"
                   disabled={isLoading}
                 >
                   View Tasks
@@ -73,7 +73,7 @@ export default function HomePage() {
                 <Link href="/auth" className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full py-6 text-lg text-white border-blue-400 hover:bg-blue-800"
+                    className="w-full py-6 text-lg text-blue-700 border-blue-400 hover:bg-blue-100"
                     disabled={isLoading}
                   >
                     My Account
@@ -83,7 +83,7 @@ export default function HomePage() {
                 <Link href="/auth" className="w-full">
                   <Button
                     variant="outline"
-                    className="w-full py-6 text-lg text-white border-blue-400 hover:bg-blue-800"
+                    className="w-full py-6 text-lg text-blue-700 border-blue-400 hover:bg-blue-100"
                     disabled={isLoading}
                   >
                     Sign In
@@ -92,7 +92,7 @@ export default function HomePage() {
               )}
             </div>
 
-            <div className="mt-8 text-center text-blue-200">
+            <div className="mt-8 text-center text-blue-700">
               <p>Get started by managing your tasks or signing in to sync your data.</p>
             </div>
           </CardContent>
