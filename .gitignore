@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+venv/
+env/
+ENV/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build outputs
+.next/
+dist/
+build/
+target/
+.nuxt/
+out/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment specific
+.env.local
+.env.*.local
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+install.log
+MANIFEST
+
+# Database
+*.db
+*.db-journal
+
+# Coverage
+coverage/
+.coverage.*
+!.coveragerc
+
+# Testing
+junit.xml
+coverage.xml
+
+# CI
+.github/
+.circleci/
+.travis.yml
