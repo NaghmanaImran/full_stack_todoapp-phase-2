@@ -41,9 +41,10 @@ export default function AuthPage() {
     if (isLogin) {
       // Sign in
       try {
-        const res = await signIn.email.password({
+        const res = await signIn.email({
           email,
           password,
+          callbackURL: '/tasks',
         });
 
         if (res?.session) {
@@ -59,9 +60,9 @@ export default function AuthPage() {
         setError(error?.message || 'Sign in failed. Please try again.');
       }
     } else {
-      // Sign up (register)
+      // Sign up (register) - in better-auth, the same endpoint handles both login and registration
       try {
-        const res = await signIn.email.verifyAndAccept({
+        const res = await signIn.email({
           email,
           password,
           callbackURL: '/tasks',
