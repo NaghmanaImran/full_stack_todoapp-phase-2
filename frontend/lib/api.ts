@@ -2,7 +2,18 @@
 
 import { authClient } from "@/lib/auth";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// Determine the API base URL based on the environment
+const getApiBaseUrl = () => {
+  if (typeof window !== 'undefined') {
+    // Client-side: use the current origin or fallback to environment variable
+    return process.env.NEXT_PUBLIC_API_URL || window.location.origin.replace(/\/$/, '');
+  }
+
+  // Server-side: use environment variable or default to localhost
+  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 /**
  * API client that automatically attaches JWT token to requests

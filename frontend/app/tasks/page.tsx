@@ -88,36 +88,36 @@ export default function TasksPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 py-8 px-4 sm:px-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8 px-4 sm:px-6 animate-fade-in">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-3">
+          <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-3">
             Task Manager
           </h1>
-          <p className="text-lg text-blue-800 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Organize your work and boost productivity with our intuitive task management system
           </p>
         </div>
 
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 mb-8 border border-blue-200">
+        <div className="card-elevated p-6 mb-8 transition-all duration-300">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
             <div>
-              <h2 className="text-2xl font-bold text-blue-900 flex items-center gap-2">
-                <span className="bg-blue-100 p-2 rounded-lg">
+              <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                <span className="bg-gradient-to-br from-blue-100 to-purple-100 p-2 rounded-lg shadow-sm">
                   <Filter className="h-5 w-5 text-blue-600" />
                 </span>
                 My Tasks
               </h2>
-              <p className="text-blue-700 mt-1">Manage your tasks efficiently</p>
+              <p className="text-gray-600 mt-1">Manage your tasks efficiently</p>
             </div>
 
             <div className="flex flex-wrap gap-3 w-full lg:w-auto">
-              <div className="flex items-center gap-1 bg-blue-100 rounded-lg p-1">
-                <Filter className="h-3 w-3 text-blue-600 ml-1" />
+              <div className="flex items-center gap-1 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-1.5 shadow-sm">
+                <Filter className="h-3.5 w-3.5 text-blue-600 ml-0.5" />
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value as 'all' | 'pending' | 'completed')}
-                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
+                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 font-medium"
                 >
                   <option value="all">All</option>
                   <option value="pending">Pending</option>
@@ -125,12 +125,12 @@ export default function TasksPage() {
                 </select>
               </div>
 
-              <div className="flex items-center gap-1 bg-blue-100 rounded-lg p-1">
-                <SortAsc className="h-3 w-3 text-blue-600 ml-1" />
+              <div className="flex items-center gap-1 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl p-1.5 shadow-sm">
+                <SortAsc className="h-3.5 w-3.5 text-blue-600 ml-0.5" />
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as 'created' | 'title')}
-                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-blue-900"
+                  className="border-0 bg-transparent rounded-md py-1 px-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 font-medium"
                 >
                   <option value="created">By Date</option>
                   <option value="title">By Title</option>
@@ -142,25 +142,25 @@ export default function TasksPage() {
                   setEditingTask(null);
                   setShowForm(true);
                 }}
-                className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white flex items-center gap-1 px-3 py-3 text-sm"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white flex items-center gap-1 px-4 py-3 text-sm shadow-md hover:shadow-lg transition-all duration-300"
               >
-                <Plus className="h-3 w-3" /> Add
+                <Plus className="h-3.5 w-3.5" /> Add
               </Button>
 
               <Button
                 onClick={fetchTasks}
                 variant="outline"
-                className="flex items-center gap-1 border-blue-400 hover:bg-blue-100 text-blue-700 px-3 py-3 text-sm"
+                className="flex items-center gap-1 border-gray-300 hover:bg-gray-100 text-gray-700 px-4 py-3 text-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <RotateCcw className="h-3 w-3" /> Refresh
+                <RotateCcw className="h-3.5 w-3.5" /> Refresh
               </Button>
 
               <Button
                 onClick={() => window.location.href = '/auth'}
                 variant="outline"
-                className="flex items-center gap-1 border-blue-400 hover:bg-blue-100 text-blue-700 px-3 py-3 text-sm"
+                className="flex items-center gap-1 border-gray-300 hover:bg-gray-100 text-gray-700 px-4 py-3 text-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <User className="h-3 w-3" /> Account
+                <User className="h-3.5 w-3.5" /> Account
               </Button>
             </div>
           </div>
@@ -179,14 +179,14 @@ export default function TasksPage() {
           <div className="mb-6">
             <Button
               onClick={() => setShowForm(true)}
-              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white w-full md:w-auto flex items-center justify-center gap-1 py-3 text-base"
+              className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white w-full md:w-auto flex items-center justify-center gap-1 py-3 text-base shadow-md hover:shadow-lg transition-all duration-300"
             >
               <Plus className="h-4 w-4" /> New Task
             </Button>
           </div>
         )}
 
-        <div className="bg-white/50 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-blue-200">
+        <div className="card-elevated p-6 transition-all duration-300">
           <TaskList
             tasks={filteredAndSortedTasks}
             onEdit={(task) => {
